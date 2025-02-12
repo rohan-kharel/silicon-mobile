@@ -165,7 +165,7 @@ function MyStack() {
     </Stack.Navigator>
   );
 }
-
+//heinz beans
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
