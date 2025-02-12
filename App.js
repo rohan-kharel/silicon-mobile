@@ -86,7 +86,7 @@ function ArticleDetailsScreen({ route }) {
   const { article } = route.params;
 
   return (
-    <ScrollView style={styles.screen}>
+    <ScreenWrapper>
       <Header />
       <View style={styles.articleContainer}>
         <Text style={styles.pageTitle}>{article.title}</Text>
@@ -96,7 +96,7 @@ function ArticleDetailsScreen({ route }) {
         </Text>
         <Text style={styles.articleContent}>{article.content}</Text>
       </View>
-    </ScrollView>
+    </ScreenWrapper>
   );
 }
 
