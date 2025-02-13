@@ -8,6 +8,7 @@ import { getFirestore, collection, getDocs, doc, getDoc } from 'firebase/firesto
 import { db } from './firebaseConfig';
 import Header from './components/Header.js';
 import { createStackNavigator } from '@react-navigation/stack';
+import 'react-native-gesture-handler';
 
 export default function App() {
   return (
@@ -35,7 +36,6 @@ function HomeScreen({ navigation }) {
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        const db = getFirestore();
         const querySnapshot = await getDocs(collection(db, 'articles'));
         const articlesList = await Promise.all(querySnapshot.docs.map(async (docSnapshot) => {
           const articleData = docSnapshot.data();
@@ -72,7 +72,7 @@ function HomeScreen({ navigation }) {
               <Image source={{ uri: article.bannerURL }} style={styles.articleGalleryImage} />
               <Text style={styles.articleGalleryTitle}>{article.title}</Text>
               <Text style={styles.articleGalleryInfo}>
-                Published on {new Date(article.createdAt.seconds * 1000).toDateString()} | Author: {article.authorName}
+                Published on {new Date((article.createdAt?.seconds || 0) * 1000).toDateString()                } | Author: {article.authorName}
               </Text>
             </View>
           </TouchableOpacity>
