@@ -28,6 +28,6 @@ jobs:
 
       - name: Deploy to Server via SCP
         run: |
-          scp -r ./dist/* ubuntu@84.8.157.53:/var/www/html/
+          scp -o KexAlgorithms=+diffie-hellman-group14-sha1 -r ./dist/* ubuntu@84.8.157.53:/var/www/html/
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
