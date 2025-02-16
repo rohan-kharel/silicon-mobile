@@ -25,6 +25,12 @@ jobs:
         run: npm run web-build
         env:
           NODE_ENV: production
+      
+      - name: Add Server to Known Hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H 84.8.157.53 >> ~/.ssh/known_hosts
+          chmod 644 ~/.ssh/known_hosts
 
       - name: Deploy to Server via SCP
         run: |
