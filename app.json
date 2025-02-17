@@ -19,6 +19,9 @@
     },
     "android": {
       "package": "com.thesilicon.app"
+    },
+    "web": {
+      "favicon": "./assets/logo-light.png"
     }
   }
 }
