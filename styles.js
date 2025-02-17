@@ -19,18 +19,19 @@ const styles = StyleSheet.create({
         marginBottom: 20,
     },
     articleGalleryImage: {
-        width: screenWidth > 320 ? screenWidth - 40 : 320,
-        height: screenWidth > 320 ? (screenWidth - 40) * 0.75 : 240,
+        width: screenWidth > 360 ? 360: screenWidth - 40 ,
+        height: screenWidth > 360 ? 240: (screenWidth - 40) * 2/3 ,
         borderRadius: 20,
         alignSelf: "center",
     },
     articleGalleryTitle: {
         marginTop: 10,
+        marginHorizontal: 20,
         fontFamily: "Helvetica",
-        fontSize: 30,
+        fontSize: screenWidth > 450 ? 30: screenWidth > 360 ? 25: 20,
         fontWeight: "bold",
         color: "#000050",
-        alignSelf: "center",
+        textAlign: "center",
     },
     articleGalleryInfo: {
         marginTop: 10,

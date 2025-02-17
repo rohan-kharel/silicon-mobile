@@ -23,6 +23,10 @@ function HomeScreen({ navigation }) {
             authorName,
           };
         }));
+
+        // Sort articles by createdAt timestamp in descending order (newest to oldest)
+        articlesList.sort((a, b) => b.createdAt.seconds - a.createdAt.seconds);
+
         setArticles(articlesList);
       } catch (error) {
         console.error('Error fetching articles:', error);
